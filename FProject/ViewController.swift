@@ -8,13 +8,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+class LoginViewController: UIViewController {
+  
+    @IBAction func emailfield(_ sender: UITextField) {
     }
-
-
+    @IBAction func passwordfield(_ sender: UITextField) {
+    }
+    @IBAction func loginTapped(_ sender: UIButton) {
+    }
 }
-
+class RegisterViewController: UIViewController {
+    
+    @IBAction func namefield(_ sender: UITextField) {
+    }
+    @IBAction func emailfield(_ sender: UITextField) {
+    }
+    @IBAction func passwordfield(_ sender: UITextField) {
+    }
+    @IBAction func registertapped(_ sender: UIButton) {
+    }
+}
