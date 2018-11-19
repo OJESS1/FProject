@@ -27,4 +27,26 @@ class RegisterViewController: UIViewController {
     }
     @IBAction func registertapped(_ sender: UIButton) {
     }
+    
+    class MapViewController: UIViewController {
+        @IBAction func myProfileField(_ sender: UIButton) {
+        }
+        @IBAction func searchField(_ sender: UIButton) {
+        }
+    }
+    
+    class MyProfileViewController: UIViewController {
+        
+        @IBAction func myProfileField(_ sender: UIButton) {
+        }
+        @IBAction func searchField(_ sender: UIButton) {
+        }
+        
+        @IBAction func accountSettingsField(_ sender: UIButton) {
+        }
+        
+        
+    }
+   
 }
+
