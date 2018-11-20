@@ -8,26 +8,53 @@
 
 import UIKit
 
+
+
 class LoginViewController: UIViewController {
   
-    @IBAction func emailfield(_ sender: UITextField) {
-    }
     @IBAction func passwordfield(_ sender: UITextField) {
     }
     @IBAction func loginTapped(_ sender: UIButton) {
     }
+    
+    @IBAction func emailField(_ sender: UITextField) {
+    }
 }
+
 class RegisterViewController: UIViewController {
     
-    @IBAction func namefield(_ sender: UITextField) {
-    }
-    @IBAction func emailfield(_ sender: UITextField) {
-    }
-    @IBAction func passwordfield(_ sender: UITextField) {
-    }
-    @IBAction func registertapped(_ sender: UIButton) {
+    
+//    @IBAction func createAccountAction(_ sender: AnyObject) {
+        
+  //      if emailField == "" {
+    //        let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
+        
+      //  }
     }
     
+    
+    @IBAction func passwordfield(_ sender: UITextField) {
+    }
+    @IBAction func emailfield(_ sender: UITextField) {
+        
+        
+    }
+    @IBAction func nameField(_ sender: UITextField) {
+   
+        }
+        
+    @IBAction func registerTapped(_ sender: UIButton) {
+        
+        
+    }
+    
+}
+    
+    
+
+    
+
+
     class MapViewController: UIViewController {
         @IBAction func myProfileField(_ sender: UIButton) {
         }
@@ -48,5 +75,5 @@ class RegisterViewController: UIViewController {
         
     }
    
-}
+
 

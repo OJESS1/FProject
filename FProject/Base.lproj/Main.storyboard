@@ -166,6 +166,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                                 <connections>
+                                    <action selector="nameField:" destination="xaN-tC-jf3" eventType="editingDidEnd" id="bt6-LN-ygr"/>
                                     <action selector="namefield:" destination="xaN-tC-jf3" eventType="editingDidEnd" id="de8-b4-2c4"/>
                                 </connections>
                             </textField>
@@ -178,6 +179,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                                 <connections>
+                                    <action selector="emailField:" destination="xaN-tC-jf3" eventType="editingDidEnd" id="qul-a2-c27"/>
                                     <action selector="emailfield:" destination="xaN-tC-jf3" eventType="editingDidEnd" id="AEx-uO-8WN"/>
                                 </connections>
                             </textField>
@@ -190,6 +192,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
                                 <connections>
+                                    <action selector="passwordField:" destination="xaN-tC-jf3" eventType="editingDidEnd" id="XRF-Lx-jdc"/>
                                     <action selector="passwordfield:" destination="xaN-tC-jf3" eventType="editingDidEnd" id="BAb-OH-Llp"/>
                                 </connections>
                             </textField>
@@ -201,6 +204,8 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="registerButtonField:" destination="xaN-tC-jf3" eventType="touchUpInside" id="552-zw-Gh2"/>
+                                    <action selector="registerTapped:" destination="xaN-tC-jf3" eventType="touchUpInside" id="BKQ-aH-6R7"/>
                                     <action selector="registertapped:" destination="xaN-tC-jf3" eventType="touchUpInside" id="e8i-4m-pmp"/>
                                     <segue destination="gtf-QX-6dl" kind="show" id="Wsc-6S-TNe"/>
                                 </connections>
