@@ -9,28 +9,24 @@
 import UIKit
 
 
-
 class LoginViewController: UIViewController {
   
+    @IBAction func emailField(_ sender: UITextField) {
+    }
     @IBAction func passwordfield(_ sender: UITextField) {
     }
     @IBAction func loginTapped(_ sender: UIButton) {
-    }
-    
-    @IBAction func emailField(_ sender: UITextField) {
     }
 }
 
 class RegisterViewController: UIViewController {
     
     
-//    @IBAction func createAccountAction(_ sender: AnyObject) {
         
   //      if emailField == "" {
     //        let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
         
       //  }
-    }
     
     
     @IBAction func passwordfield(_ sender: UITextField) {
