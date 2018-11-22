@@ -1,75 +1,51 @@
-//
 //  ViewController.swift
 //  FProject
-//
 //  Created by Jessica Owusu on 11/16/18.
 //  Copyright © 2018 Jessica Owusu. All rights reserved.
-//
 
 import UIKit
+import FirebaseAuth
 
 
-class LoginViewController: UIViewController {
+class ViewController: UIViewController {
   
-    @IBAction func emailField(_ sender: UITextField) {
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
-    @IBAction func passwordfield(_ sender: UITextField) {
+    
+    @IBAction func createAccounTapped(_ sender: Any) {
+    if let email = emailField.text, let password = passwordField.text {
+        
+        
+    Auth.auth().createUser(withEmail: email, password: password, completion: { user, error in
+        if let firebaseError = error {
+        print(firebaseError.localizedDescription)
+        return
+        }
+        print ("success!")
+        })
+        }
+        
     }
-    @IBAction func loginTapped(_ sender: UIButton) {
+    
+    @IBAction func loginTapped(_ sender: Any) {
+    if let email = emailField.text, let password = passwordField.text {
+        
+    Auth.auth().signIn(withEmail: email, password: password, completion: { user, error in
+        if let firebaseError = error {
+        print(firebaseError.localizedDescription)
+        return
+        }
+        print ("success!")
+                
+        })
+        }
+    
     }
 }
-
-class RegisterViewController: UIViewController {
-    
-    
-        
-  //      if emailField == "" {
-    //        let alertController = UIAlertController(title: "Error", message: "Please enter your email and password", preferredStyle: .alert)
-        
-      //  }
-    
-    
-    @IBAction func passwordfield(_ sender: UITextField) {
-    }
-    @IBAction func emailfield(_ sender: UITextField) {
-        
-        
-    }
-    @IBAction func nameField(_ sender: UITextField) {
-   
-        }
-        
-    @IBAction func registerTapped(_ sender: UIButton) {
-        
-        
-    }
-    
-}
-    
-    
-
-    
-
-
-    class MapViewController: UIViewController {
-        @IBAction func myProfileField(_ sender: UIButton) {
-        }
-        @IBAction func searchField(_ sender: UIButton) {
-        }
-    }
-    
-    class MyProfileViewController: UIViewController {
-        
-        @IBAction func myProfileField(_ sender: UIButton) {
-        }
-        @IBAction func searchField(_ sender: UIButton) {
-        }
-        
-        @IBAction func accountSettingsField(_ sender: UIButton) {
-        }
-        
-        
-    }
-   
 
 

@@ -6,7 +6,8 @@ target 'FProject' do
   use_frameworks!
 
   # Pods for FProject
+
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
-pod 'Firebase/Database' 
+pod 'Firebase/Database'
 end
