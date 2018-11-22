@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		01370A9021A46F2300B906B8 /* LoginUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01370A8F21A46F2300B906B8 /* LoginUnitTest.swift */; };
+		4C262C0321A7413300EEF2C0 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C262C0221A7413300EEF2C0 /* RegisterViewController.swift */; };
+		4C262C0521A75D4D00EEF2C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C262C0421A75D4D00EEF2C0 /* MainViewController.swift */; };
 		4C3364E921A02327008ECB29 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3364E821A02327008ECB29 /* ViewController.swift */; };
 		4C8D10DA219E47770014CE8A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8D10D9219E47770014CE8A /* AppDelegate.swift */; };
 		4C8D10DF219E47770014CE8A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D10DD219E47770014CE8A /* Main.storyboard */; };
@@ -32,6 +34,8 @@
 		01370A8F21A46F2300B906B8 /* LoginUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUnitTest.swift; sourceTree = "<group>"; };
 		01370A9121A46F2300B906B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04149F2BF8256D7D52AE6097 /* Pods-FProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FProject/Pods-FProject.debug.xcconfig"; sourceTree = "<group>"; };
+		4C262C0221A7413300EEF2C0 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		4C262C0421A75D4D00EEF2C0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4C3364E821A02327008ECB29 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4C8D10D6219E47770014CE8A /* FProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8D10D9219E47770014CE8A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +92,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4C262BFF21A740C500EEF2C0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C262C0021A740D100EEF2C0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C3364E821A02327008ECB29 /* ViewController.swift */,
+				4C262C0221A7413300EEF2C0 /* RegisterViewController.swift */,
+				4C262C0421A75D4D00EEF2C0 /* MainViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C262C0121A740EA00EEF2C0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		4C8D10CD219E47760014CE8A = {
 			isa = PBXGroup;
 			children = (
@@ -111,8 +139,10 @@
 		4C8D10D8219E47770014CE8A /* FProject */ = {
 			isa = PBXGroup;
 			children = (
+				4C262C0121A740EA00EEF2C0 /* Controller */,
+				4C262C0021A740D100EEF2C0 /* View */,
+				4C262BFF21A740C500EEF2C0 /* Model */,
 				4C8D10D9219E47770014CE8A /* AppDelegate.swift */,
-				4C3364E821A02327008ECB29 /* ViewController.swift */,
 				4C8D10DD219E47770014CE8A /* Main.storyboard */,
 				4C8D10E0219E477B0014CE8A /* Assets.xcassets */,
 				4C8D10E2219E477B0014CE8A /* LaunchScreen.storyboard */,
@@ -296,8 +326,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C262C0321A7413300EEF2C0 /* RegisterViewController.swift in Sources */,
 				4C3364E921A02327008ECB29 /* ViewController.swift in Sources */,
 				4C8D10DA219E47770014CE8A /* AppDelegate.swift in Sources */,
+				4C262C0521A75D4D00EEF2C0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,7 +529,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.FProject;
+				PRODUCT_BUNDLE_IDENTIFIER = t;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,7 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = me.FProject;
+				PRODUCT_BUNDLE_IDENTIFIER = t;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
