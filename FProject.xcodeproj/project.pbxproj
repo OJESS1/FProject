@@ -16,6 +16,7 @@
 		4C8D10E1219E477B0014CE8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D10E0219E477B0014CE8A /* Assets.xcassets */; };
 		4C8D10E4219E477B0014CE8A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8D10E2219E477B0014CE8A /* LaunchScreen.storyboard */; };
 		6A81A5EE80E1DA74A296305C /* Pods_FProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B945DF577676D3FC110F10C9 /* Pods_FProject.framework */; };
+		AE89C2AC21AE159D00DCABA0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE89C2AB21AE159D00DCABA0 /* User.swift */; };
 		CC12B6C321A32C1C002DA19A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC12B6C221A32C1C002DA19A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 		4C8D10E3219E477B0014CE8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C8D10E5219E477B0014CE8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CA79AFA8530006E5DBC9930 /* Pods-FProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-FProject/Pods-FProject.release.xcconfig"; sourceTree = "<group>"; };
+		AE89C2AB21AE159D00DCABA0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B945DF577676D3FC110F10C9 /* Pods_FProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC12B6C221A32C1C002DA19A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,6 +150,7 @@
 				4C8D10E2219E477B0014CE8A /* LaunchScreen.storyboard */,
 				4C8D10E5219E477B0014CE8A /* Info.plist */,
 				CC12B6C221A32C1C002DA19A /* GoogleService-Info.plist */,
+				AE89C2AB21AE159D00DCABA0 /* User.swift */,
 			);
 			path = FProject;
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-FProject/Pods-FProject-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -281,6 +285,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -329,6 +334,7 @@
 				4C262C0321A7413300EEF2C0 /* RegisterViewController.swift in Sources */,
 				4C3364E921A02327008ECB29 /* ViewController.swift in Sources */,
 				4C8D10DA219E47770014CE8A /* AppDelegate.swift in Sources */,
+				AE89C2AC21AE159D00DCABA0 /* User.swift in Sources */,
 				4C262C0521A75D4D00EEF2C0 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

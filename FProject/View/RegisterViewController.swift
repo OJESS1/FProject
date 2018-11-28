@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class RegisterViewController: UIViewController {
     
@@ -15,72 +16,79 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
-    
     @IBOutlet weak var userProfileImage: UIImageView!
     
     //MARK:- CLASS METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
     }
-
+    
     //MARK:- IBACTIONS
-
     
     
     @IBAction func handleRegister(_ sender: UIButton) {
-    guard let email = emailField.text, let password = passwordField.text, let username = usernameField.text else {return}
-    guard email.count > 0 && password.count > 0 else {print("Invalid field");return}
-        
-        
-    
-    
-    Auth.auth().createUser(withEmail: email, password: password, completion: { user, error in
-        guard let uid = user?.user.uid else {return}
-        if let firebaseError = error {
-           print(firebaseError.localizedDescription)
-        return
+        if usernameField.text != "" && emailField.text != "" && passwordField.text != "" && userProfileImage.image != nil {
+            registerUser()
+        } else {
+            print("Please fill all the fields and select a profile image to proceed")
+            let alert = UIAlertController(title: "Incomplete form", message: "Insert both title and cover image before proceeding", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .default , handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
         }
         
-        let ref = Storage.storage().reference().child("avatars").child(uid)
-        guard let selectedImage = self.userProfileImage.image else {return}
-        guard let uploadData = selectedImage.jpegData(compressionQuality: 0.2) else {return}
-
-        ref.putData(uploadData, metadata: nil, completion: { (metadata, err) in
-            if let err = err {
-                print("Failed to upload user image to Firebase Storage",err)
+    }
+    
+    func registerUser() {
+        guard let email = emailField.text, let password = passwordField.text, let username = usernameField.text else {return}
+        guard email.count > 0 && password.count > 0 else {print("Invalid field");return}
+        
+        Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+            
+            guard let uid = user?.user.uid else {return}
+            if let error = error {
+                print("Failed to log user in:", error)
                 return
             }
             
-            ref.downloadURL(completion: { (url, err) in
+            let ref = Storage.storage().reference().child("avatars").child(uid)
+            guard let selectedImage = self.userProfileImage.image else {return}
+            guard let uploadData = selectedImage.jpegData(compressionQuality: 0.2) else {return}
+            
+            ref.putData(uploadData, metadata: nil, completion: { (metadata, err) in
                 if let err = err {
-                    print("Failed to get user image download url",err)
+                    print("Failed to upload user image to Firebase Storage",err)
                     return
                 }
                 
-                guard let userImageUrl = url?.absoluteString else {return}
-                // Structure user details
-                let dictionaryValues = ["email": email,
-                                        "username": username,
-                                        "profileImageUrl": userImageUrl ]
-                let values = [uid:dictionaryValues]
-                
-                // Save user details to database
-                Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                ref.downloadURL(completion: { (url, err) in
                     if let err = err {
-                        print("Failed to save user information to database",err)
+                        print("Failed to get user image download url",err)
+                        return
                     }
+                    
+                    guard let userImageUrl = url?.absoluteString else {return}
+                    // Structure user details
+                    let dictionaryValues = ["email": email,
+                                            "username": username,
+                                            "profileImageUrl": userImageUrl ]
+                    let values = [uid:dictionaryValues]
+                    
+                    // Save user details to database
+                    Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                        if let err = err {
+                            print("Failed to save user information to database",err)
+                        }
+                        print ("Successfully registered: ",username)
+                        mainRef?.fetchUser()
+                        self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+                    })
+                    
                 })
-                print ("Successfully registered: ",username)
-                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
-            })
             })
         })
-
-
-}
+    }
+    
     @IBAction func handleLogin(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
         

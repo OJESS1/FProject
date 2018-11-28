@@ -35,10 +35,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LoginTapper:" destination="nOu-Tz-pnX" eventType="touchUpInside" id="oeY-kd-yLG"/>
-                                    <action selector="loginTapped:" destination="nOu-Tz-pnX" eventType="touchUpInside" id="hyY-qu-wJe"/>
-                                    <action selector="loginTappen:" destination="POv-nA-oUd" eventType="touchUpInside" id="Dji-Jh-8Bp"/>
-                                    <segue destination="HXC-ED-TWj" kind="show" id="g1e-qH-NLA"/>
+                                    <action selector="loginTapped:" destination="POv-nA-oUd" eventType="touchUpInside" id="Qix-Yq-aV6"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aU7-2e-Ea2" userLabel="Email View">
@@ -185,7 +182,6 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="handleCreateAccount:" destination="POv-nA-oUd" eventType="touchUpInside" id="8Uu-3f-ozq"/>
                                     <segue destination="7Vs-UU-X84" kind="show" id="XTV-3C-4P3"/>
                                 </connections>
                             </button>
@@ -244,10 +240,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="LoginTapper:" destination="nOu-Tz-pnX" eventType="touchUpInside" id="AC1-xd-hAz"/>
-                                    <action selector="handleRegister:" destination="7Vs-UU-X84" eventType="touchUpInside" id="AbZ-u8-2As"/>
-                                    <action selector="loginTapped:" destination="nOu-Tz-pnX" eventType="touchUpInside" id="nWy-os-cr6"/>
-                                    <action selector="loginTappen:" destination="POv-nA-oUd" eventType="touchUpInside" id="xBK-GX-c4V"/>
+                                    <action selector="handleRegister:" destination="7Vs-UU-X84" eventType="touchUpInside" id="pdq-Xm-YOs"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwT-cz-fc0" userLabel="Email View">
@@ -734,20 +727,47 @@
         <!--Home-->
         <scene sceneID="ic9-TS-9yr">
             <objects>
-                <viewController id="PnE-yn-hCy" sceneMemberID="viewController">
+                <viewController id="PnE-yn-hCy" customClass="MainViewController" customModule="FProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bd5-l8-jcz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-tG-jBP">
-                                <rect key="frame" x="16" y="93" width="88" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User's name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgL-tG-jBP">
+                                <rect key="frame" x="16" y="98" width="117" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ho-tK-ef6">
+                                <rect key="frame" x="299" y="80" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="AIR-NY-S4G"/>
+                                    <constraint firstAttribute="height" constant="60" id="Byq-q9-sPv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nma-KL-3Qz">
+                                <rect key="frame" x="16" y="156" width="343" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.27816901408450706" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="Ikf-Zb-5pz"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MUX-Yk-wji" firstAttribute="trailing" secondItem="Nma-KL-3Qz" secondAttribute="trailing" constant="16" id="X2e-OK-OeT"/>
+                            <constraint firstItem="Nma-KL-3Qz" firstAttribute="leading" secondItem="MUX-Yk-wji" secondAttribute="leading" constant="16" id="Z4a-ky-meZ"/>
+                            <constraint firstItem="Nma-KL-3Qz" firstAttribute="top" secondItem="6ho-tK-ef6" secondAttribute="bottom" constant="16" id="fiy-aB-lIc"/>
+                            <constraint firstItem="mgL-tG-jBP" firstAttribute="centerY" secondItem="6ho-tK-ef6" secondAttribute="centerY" id="sSU-pZ-c5S"/>
+                            <constraint firstItem="mgL-tG-jBP" firstAttribute="leading" secondItem="MUX-Yk-wji" secondAttribute="leading" constant="16" id="wBT-3m-kxA"/>
+                            <constraint firstItem="6ho-tK-ef6" firstAttribute="top" secondItem="MUX-Yk-wji" secondAttribute="top" constant="16" id="xc7-bc-iaj"/>
+                            <constraint firstAttribute="trailing" secondItem="6ho-tK-ef6" secondAttribute="trailing" constant="16" id="xik-yb-AhX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MUX-Yk-wji"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="IrK-ni-Og8">
@@ -756,6 +776,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="currentUsername" destination="mgL-tG-jBP" id="1fa-xt-gHw"/>
+                        <outlet property="currentuserAvatar" destination="6ho-tK-ef6" id="afN-cG-cPO"/>
                         <segue destination="MGQ-Az-gia" kind="presentation" identifier="MaintToLogin" id="Xhn-I0-QMI"/>
                     </connections>
                 </viewController>
@@ -786,6 +808,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="c2Q-ln-hBO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EpH-XS-dx6">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -818,7 +841,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="photo-camera" width="102.40000152587891" height="102.40000152587891"/>
+        <image name="photo-camera" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Jqt-FN-odA"/>

@@ -8,14 +8,20 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
+import Kingfisher
 
+var mainRef: MainViewController?
 class MainViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var currentUsername: UILabel!
+    @IBOutlet weak var currentuserAvatar: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         checkIfUserIsLoggedIn()
-
-        // Do any additional setup after loading the view.
+        mainRef = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -23,8 +29,21 @@ class MainViewController: UIViewController {
     }
     
     func fetchUser(){
-    
-//        Database.database().reference().child("users").child(<#T##pathString: String##String#>)
+        guard let user = Auth.auth().currentUser else {return}
+        
+        Database.database().reference().child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            guard let userDictionary = snapshot.value as? [String:Any] else {return}
+            
+            let user = User(uid: user.uid, dictionary: userDictionary)
+            print(user.username)
+            guard let url = URL(string: user.profileImageUrl) else {return}
+            let resource = ImageResource(downloadURL: url, cacheKey: user.uid)
+            self.currentuserAvatar.kf.setImage(with: resource)
+            self.currentUsername.text = user.username
+            
+        }) { (err) in
+            print("Failed to fetch users: ", err)
+        }
     }
     fileprivate func checkIfUserIsLoggedIn() {
         if Auth.auth().currentUser?.uid == nil {
@@ -33,6 +52,7 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
     
     fileprivate func handleLogout(){
         do {
@@ -44,15 +64,14 @@ class MainViewController: UIViewController {
         }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "MaintToLogin", sender: self)
+            
+        } catch let err {
+            print("Failed to logout user: ", err)
+        }
     }
-    */
-
+    
 }
