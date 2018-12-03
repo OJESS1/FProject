@@ -14,9 +14,9 @@ import Kingfisher
 var mainRef: MainViewController?
 class MainViewController: UIViewController {
     
-    
-    @IBOutlet weak var currentUsername: UILabel!
-    @IBOutlet weak var currentuserAvatar: UIImageView!
+//
+//    @IBOutlet weak var currentUsername: UILabel!
+//    @IBOutlet weak var currentuserAvatar: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +35,11 @@ class MainViewController: UIViewController {
             guard let userDictionary = snapshot.value as? [String:Any] else {return}
             
             let user = User(uid: user.uid, dictionary: userDictionary)
-            print(user.username)
-            guard let url = URL(string: user.profileImageUrl) else {return}
-            let resource = ImageResource(downloadURL: url, cacheKey: user.uid)
-            self.currentuserAvatar.kf.setImage(with: resource)
-            self.currentUsername.text = user.username
+            print("\(user.username) just logged in!")
+//            guard let url = URL(string: user.profileImageUrl) else {return}
+//            let resource = ImageResource(downloadURL: url, cacheKey: user.uid)
+//            self.currentuserAvatar.kf.setImage(with: resource)
+//            self.currentUsername.text = user.username
             
         }) { (err) in
             print("Failed to fetch users: ", err)
@@ -57,17 +57,17 @@ class MainViewController: UIViewController {
     fileprivate func handleLogout(){
         do {
             try Auth.auth().signOut()
-            performSegue(withIdentifier: "MaintToLogin", sender: self)
+            performSegue(withIdentifier: "MainToLogin", sender: self)
             
         } catch let err {
             print("Failed to logout user: ", err)
         }
     }
     
-    @IBAction func logoutButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func logoutButtonPressed(_ sender: UIButton) {
         do {
             try Auth.auth().signOut()
-            performSegue(withIdentifier: "MaintToLogin", sender: self)
+            performSegue(withIdentifier: "MainToLogin", sender: self)
             
         } catch let err {
             print("Failed to logout user: ", err)

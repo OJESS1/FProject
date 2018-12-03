@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="POv-nA-oUd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HMx-P4-42d">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -36,7 +36,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginTapped:" destination="POv-nA-oUd" eventType="touchUpInside" id="Qix-Yq-aV6"/>
-                                    <segue destination="HMx-P4-42d" kind="show" id="Mqd-KX-OlB"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aU7-2e-Ea2" userLabel="Email View">
@@ -186,11 +185,19 @@
                                     <constraint firstItem="qwY-b2-Bh9" firstAttribute="top" secondItem="1nb-vO-vRU" secondAttribute="top" constant="55" id="nzY-7B-ehL"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid email/password. Please try again." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYJ-Y1-YeV">
+                                <rect key="frame" x="40" y="348" width="212" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                <color key="textColor" red="0.76424870466321249" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xQC-Sv-FKs" firstAttribute="centerX" secondItem="3vQ-oa-I3v" secondAttribute="centerX" id="10j-yC-OOp"/>
                             <constraint firstItem="1Vx-0A-WkE" firstAttribute="top" secondItem="aU7-2e-Ea2" secondAttribute="bottom" constant="20" id="59q-Dt-jhj"/>
+                            <constraint firstItem="BYJ-Y1-YeV" firstAttribute="leading" secondItem="1Vx-0A-WkE" secondAttribute="leading" constant="10" id="7tJ-Cc-6qB"/>
+                            <constraint firstItem="BYJ-Y1-YeV" firstAttribute="top" secondItem="1Vx-0A-WkE" secondAttribute="bottom" constant="8" id="8RH-yL-dEj"/>
                             <constraint firstItem="PMM-hN-aJx" firstAttribute="top" secondItem="1Vx-0A-WkE" secondAttribute="bottom" constant="40" id="G8d-Tc-0hw"/>
                             <constraint firstItem="PMM-hN-aJx" firstAttribute="centerX" secondItem="3vQ-oa-I3v" secondAttribute="centerX" id="RnY-u1-Gdy"/>
                             <constraint firstItem="1nb-vO-vRU" firstAttribute="leading" secondItem="MgC-5W-wWI" secondAttribute="leading" id="T9N-nn-8e6"/>
@@ -208,6 +215,7 @@
                     <navigationItem key="navigationItem" id="JyY-Al-ci1"/>
                     <connections>
                         <outlet property="emailField" destination="TcM-kh-ePF" id="oTS-b0-9DL"/>
+                        <outlet property="errorMessage" destination="BYJ-Y1-YeV" id="NqL-1k-8XS"/>
                         <outlet property="passwordField" destination="3x5-Wm-ftp" id="v0d-FV-4h7"/>
                     </connections>
                 </viewController>
@@ -555,7 +563,7 @@
         <!--MapSearchPage-->
         <scene sceneID="3rY-5g-Qyc">
             <objects>
-                <viewController title="MapSearchPage" id="HMx-P4-42d" sceneMemberID="viewController">
+                <viewController title="MapSearchPage" id="HMx-P4-42d" customClass="MainViewController" customModule="FProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w0k-DM-PcI" customClass="MapViewController">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -564,16 +572,8 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="536"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nkX-zY-U4T">
-                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="HMx-P4-42d" id="7p3-ZK-mge"/>
-                                </connections>
-                            </searchBar>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="151" translatesAutoresizingMaskIntoConstraints="NO" id="2gy-CL-JZI">
-                                <rect key="frame" x="31" y="608" width="312" height="39"/>
+                                <rect key="frame" x="31" y="608" width="318" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Npf-M2-lFI">
@@ -588,14 +588,13 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmM-vH-eNe">
-                                        <rect key="frame" x="245" y="0.0" width="67" height="39"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Search">
+                                        <rect key="frame" x="245" y="0.0" width="73" height="39"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <state key="normal" title="Logout">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="searchBarTapped:" destination="qjU-VI-T2p" eventType="touchUpInside" id="MNU-w3-JfH"/>
-                                            <action selector="searchField:" destination="yIK-Fa-XBb" eventType="touchUpInside" id="uVK-69-3RI"/>
+                                            <action selector="logoutButtonPressed:" destination="HMx-P4-42d" eventType="touchUpInside" id="jC0-wh-GDx"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -603,19 +602,16 @@
                         </subviews>
                         <color key="backgroundColor" red="0.97277957199999998" green="0.85920494790000002" blue="0.92700469490000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="g4M-JR-gTv"/>
-                        <connections>
-                            <outlet property="searchBar" destination="nkX-zY-U4T" id="Yyu-NA-1Rf"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="searchDisplayController" destination="s23-DK-7Kf" id="vbU-oN-jxM"/>
+                        <segue destination="POv-nA-oUd" kind="presentation" identifier="MainToLogin" id="FGE-c4-YZN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u8I-lm-Sdb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <searchDisplayController id="s23-DK-7Kf">
                     <connections>
                         <outlet property="delegate" destination="HMx-P4-42d" id="nqk-eo-EQI"/>
-                        <outlet property="searchBar" destination="nkX-zY-U4T" id="Rh9-lz-EFw"/>
                         <outlet property="searchContentsController" destination="HMx-P4-42d" id="jSZ-WO-TAv"/>
                         <outlet property="searchResultsDataSource" destination="HMx-P4-42d" id="T27-PH-x0d"/>
                         <outlet property="searchResultsDelegate" destination="HMx-P4-42d" id="QCK-Vo-8rZ"/>
@@ -716,6 +712,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KwS-pw-TRz"/>
-        <segue reference="Jqt-FN-odA"/>
     </inferredMetricsTieBreakers>
 </document>
