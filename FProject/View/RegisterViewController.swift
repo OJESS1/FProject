@@ -18,47 +18,25 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var userProfileImage: UIImageView!
     
-    //MARK: - ALERTS
-    @IBOutlet weak var usernameAlert: UILabel!
-    @IBOutlet weak var emailAlert: UILabel!
-    @IBOutlet weak var passwordAlert: UILabel!
-    
     //MARK:- CLASS METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        emailField.addTarget(self, action: #selector(handleInputChange), for: .editingChanged)
-        usernameField.addTarget(self, action: #selector(handleInputChange), for: .editingChanged)
-        passwordField.addTarget(self, action: #selector(handleInputChange), for: .editingChanged)
     }
     
     //MARK:- IBACTIONS
     
-    @objc func handleInputChange() {
-        if usernameField.text?.count ?? 0 > 0 {
-            usernameAlert.isHidden = true
-        }
-        if emailField.text?.count ?? 0 > 2 {
-            emailAlert.isHidden = true
-        }
-        if passwordField.text?.count ?? 0 > 5 {
-            passwordAlert.isHidden = true
-        }
-    }
-    
     
     @IBAction func handleRegister(_ sender: UIButton) {
-        if usernameField.text != "" && emailField.text != "" && passwordField.text?.count ?? 0 > 5 {
+        if usernameField.text != "" && emailField.text != "" && passwordField.text != "" && userProfileImage.image != nil {
             registerUser()
         } else {
-            if usernameField.text?.count ?? 0 < 1 {
-                usernameAlert.isHidden = false
-            } else if emailField.text?.count ?? 0 < 3 {
-                emailAlert.isHidden = false
-            } else if  passwordField.text?.count ?? 0 < 6 {
-                passwordAlert.isHidden = false
-            }
+            print("Please fill all the fields and select a profile image to proceed")
+            let alert = UIAlertController(title: "Incomplete form", message: "Insert both title and cover image before proceeding", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "Ok", style: .default , handler: nil)
+            alert.addAction(ok)
+            present(alert, animated: true, completion: nil)
         }
+        
     }
     
     func registerUser() {
