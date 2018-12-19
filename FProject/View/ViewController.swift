@@ -8,8 +8,10 @@ import Firebase
 
 
 class ViewController: UIViewController {
+
+}
     
-    //MARK: - IBOUTLETS
+    /*MARK: - IBOUTLETS
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
@@ -46,10 +48,8 @@ class ViewController: UIViewController {
                 self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
             }
         }
-    }
-    
-    
-}
+    }*/
+
 
 
 
