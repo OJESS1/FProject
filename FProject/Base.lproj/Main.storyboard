@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="THI-kW-GdK">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,15 +14,14 @@
             <objects>
                 <viewController id="THI-kW-GdK" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cdT-CD-2AK">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="2LK-x8-YWa">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" highlightedImage="one second let me get the ight image quick" translatesAutoresizingMaskIntoConstraints="NO" id="2LK-x8-YWa">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="52r-vW-BnD">
-                                <rect key="frame" x="34" y="162" width="306" height="343"/>
+                                <rect key="frame" x="34" y="234" width="306" height="343"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dQM-oO-sXr">
@@ -38,7 +36,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remember me?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xa4-Zc-tuJ">
                                         <rect key="frame" x="13" y="195" width="68" height="11"/>
@@ -69,7 +67,7 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="Hj7-Qe-2SC">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="Hj7-Qe-2SC">
                                         <rect key="frame" x="98" y="24" width="111" height="93"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.93336778879165649" green="0.24080795049667358" blue="0.52120226621627808" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,7 +78,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="LpN-Eb-PuR"/>
+                        <constraints>
+                            <constraint firstItem="2LK-x8-YWa" firstAttribute="top" secondItem="cdT-CD-2AK" secondAttribute="top" id="3Jh-Q1-EzN"/>
+                            <constraint firstItem="2LK-x8-YWa" firstAttribute="trailing" secondItem="cdT-CD-2AK" secondAttribute="trailing" id="PWG-Wq-Jtl"/>
+                            <constraint firstItem="2LK-x8-YWa" firstAttribute="leading" secondItem="cdT-CD-2AK" secondAttribute="leading" id="X8q-AM-99j"/>
+                            <constraint firstItem="2LK-x8-YWa" firstAttribute="bottom" secondItem="cdT-CD-2AK" secondAttribute="bottom" id="o2d-JD-Apy"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEt-TA-0mR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,6 +93,7 @@
     </scenes>
     <resources>
         <image name="Background" width="461" height="679"/>
-        <image name="Image-1" width="179" height="145"/>
+        <image name="Logo" width="179" height="145"/>
+        <image name="one second let me get the ight image quick" width="16" height="16"/>
     </resources>
 </document>
