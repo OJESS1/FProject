@@ -1,14 +1,14 @@
 //
-//  UnitTests.swift
+//  LoginUnitTests.swift
 //  UnitTests
 //
-//  Created by aishat alonge on 20/11/2018.
+//  Created by Anisha  KATUMBA  on 31/12/2018.
 //  Copyright © 2018 Jessica Owusu. All rights reserved.
 //
 
 import XCTest
 
-class UnitTests: XCTestCase {
+class LoginUnitTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -18,9 +18,16 @@ class UnitTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func shouldConnectToFirebaseDBSuccessfully() {
+    func testExample() {
         
+        // successful login DB
+        // failed login (username)
+        // failed login (password)
+        // failed login (username and password)
         
+        // no info entered
+        // enters email, no password
+        // enters passwsord, no email
         
         
         // This is an example of a functional test case.
