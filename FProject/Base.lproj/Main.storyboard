@@ -175,10 +175,10 @@
             </objects>
             <point key="canvasLocation" x="1404" y="24.384236453201972"/>
         </scene>
-        <!--View Controller-->
+        <!--Register Customer View Controller-->
         <scene sceneID="y6u-XT-aJe">
             <objects>
-                <viewController storyboardIdentifier="registerCustomer" id="ciL-Eb-geG" customClass="ViewController" customModule="FProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerCustomer" id="ciL-Eb-geG" customClass="RegisterCustomerViewController" customModule="FProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2g4-uF-fZc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -458,6 +458,6 @@
         <image name="one second let me get the ight image quick" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="msJ-DH-yEc"/>
+        <segue reference="noN-Dy-ZIu"/>
     </inferredMetricsTieBreakers>
 </document>

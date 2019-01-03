@@ -12,4 +12,9 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'Firebase/Storage'
 pod 'Kingfisher'
+
+target 'UnitTests' do
+    inherit! :search_paths
+    pod 'Firebase'
+    end
 end

@@ -10,13 +10,14 @@ import UIKit
 import Firebase
 import FirebaseDatabase
 
-class RegisterViewController: UIViewController {
+class RegisterCustomerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    }
+    
+}
 
 
 

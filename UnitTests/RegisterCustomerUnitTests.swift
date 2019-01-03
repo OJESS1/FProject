@@ -7,8 +7,9 @@
 //
 
 import XCTest
+@testable import FProject
 
-class RegisterUnitTests: XCTestCase {
+class RegisterCustomerUnitTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -16,6 +17,14 @@ class RegisterUnitTests: XCTestCase {
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
+    }
+    
+    func shouldNotSuccessfullyConnectToDBToCreateAccount() {
+        
+    //    let register = RegisterCustomerViewController.RegisterUser()
+        
+   //     XCTAssert(true, "")
+        
     }
 
     func testExample() {
